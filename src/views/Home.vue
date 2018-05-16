@@ -1,6 +1,6 @@
 <template>
-    <my-page title="首页">
-        这是首页内容
+    <my-page title="帮助">
+        网站开发中
     </my-page>
 </template>
 
