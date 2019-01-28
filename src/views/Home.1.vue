@@ -1,5 +1,5 @@
 <template>
-    <my-page class="page-home" :title="title" :page="page">
+    <my-page class="page-home" title="博客" :page="page">
         <!-- <div class="slogan">做最好的博客平台</div> -->
         <div class="article-box">
             <ul class="news-list">
@@ -30,10 +30,8 @@
 </template>
 
 <script>
-    /* eslint-disable */
     const moment = window.moment
     import {timeFilter, commonTimeFilter} from '@/util/filter'
-    import {cms} from '@/config'
 
     export default {
         data () {
@@ -62,8 +60,6 @@
             }
         },
         mounted() {
-            console.log('cms', cms)
-            this.title = document.title = cms.siteName
             this.loadData()
 
             window.addEventListener('keydown', this.keyDown = e => {
@@ -78,12 +74,10 @@
         },
         methods: {
             loadData() {
-                let uid = this.$route.params.id || cms.uid
-                this.$http.get(`/u/${uid}/articles?page_size=20&page=${this.pagination.page}`).then(
+                this.$http.get(`/u/blog/articles?page_size=20&page=${this.pagination.page}`).then(
                     response => {
                         let data = response.data
-                        // this.articles = this.articles.concat(data)
-                        this.articles = data
+                        this.articles = this.articles.concat(data)
 
 
                         // for (let item of this.article) {
@@ -105,13 +99,7 @@
         },
         filters: {
             timeFilter,
-        },
-        watch:{
-            $route(to, from) {
-                console.log(to.path)
-                this.loadData()
-            }
-        },
+        }
     }
 </script>
 
