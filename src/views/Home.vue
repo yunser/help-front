@@ -1,31 +1,34 @@
 <template>
     <my-page class="page-home" :title="title" :page="page">
-        <!-- <div class="slogan">做最好的博客平台</div> -->
-        <div class="article-box">
-            <ul class="news-list">
-                <li class="item" v-for="article in articles">
-                    <div>
-                        <router-link :to="`/articles/${article.id}`">
-                            <div class="title">
-                                <ui-badge class="top" content="置顶" v-if="article.top" />
-                                {{ article.title }}
-                            </div>
-                        </router-link>
-                        <div class="meta">
-                            <img class="avatar" :src="article.user.avatar">
-                            <router-link class="user-name" :to="`/users/${article.user.id}/articles`">
-                                {{ article.user.name }}
+        <div class="common-container container">
+            <div class="article-box">
+                <ul class="news-list">
+                    <li class="item" v-for="article in articles">
+                        <div>
+                            <router-link :to="`/articles/${article.id}`">
+                                <div class="title">
+                                    <ui-badge class="top" content="置顶" v-if="article.top" />
+                                    {{ article.title }}
+                                </div>
                             </router-link>
-                            <div class="time" :title="commonTimeFilter(article.createTime)">{{ article.createTime | timeFilter }}</div>
+                            <div class="meta">
+                                <img class="avatar" :src="article.user.avatar">
+                                <router-link class="user-name" :to="`/users/${article.user.id}/articles`">
+                                    {{ article.user.name }}
+                                </router-link>
+                                <div class="time" :title="commonTimeFilter(article.createTime)">{{ article.createTime | timeFilter }}</div>
+                            </div>
+                            <ul v-if="article.tags">
+                                <ui-badge class="tag" v-for="tag, index in article.tags" :key="index" :content="tag" />
+                            </ul>
                         </div>
-                        <ul v-if="article.tags">
-                            <ui-badge class="tag" v-for="tag, index in article.tags" :key="index" :content="tag" />
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-            <ui-raised-button class="more" label="加载更多" @click="loadMore" v-if="pagination.page < pagination.totalPage" />
+                    </li>
+                </ul>
+                <ui-raised-button class="more" label="加载更多" @click="loadMore" v-if="pagination.page < pagination.totalPage" />
+            </div>
+
         </div>
+        <!-- <div class="slogan">做最好的博客平台</div> -->
     </my-page>
 </template>
 
@@ -117,7 +120,7 @@
 
 <style lang="scss" scoped>
 .page-home {
-    background-color: #eee;
+    // background-color: #eee;
 }
 .slogan {
     font-size: 32px;

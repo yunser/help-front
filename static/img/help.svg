@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="192px" height="192px" viewBox="0 0 192 192" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>未命名 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="help">
+            <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="192" height="192"></rect>
+            <path d="M161.084,20 L31.584,20 C25.368,20 20.334,25.035 20.334,31.25 L20.334,160.75 C20.334,166.966 25.368,172 31.584,172 L161.084,172 C167.299,172 172.334,166.966 172.334,160.75 L172.334,31.25 C172.334,25.035 167.299,20 161.084,20 Z" id="路径" fill="#3385FF"></path>
+        </g>
+        <g id="分组" transform="translate(69.000000, 54.000000)" fill="#FFFFFF">
+            <rect id="矩形" x="20" y="70" width="13" height="14"></rect>
+            <path d="M26.5,0 C11.8577875,0 0,12.5291901 0,28.0004628 L13.250657,28.0004628 C13.250657,20.3043967 19.2150295,14.0009256 26.5,14.0009256 C33.7849705,14.0009256 39.749343,20.3043967 39.749343,28.0004628 C39.749343,42 19.8746715,40.2505785 19.8746715,63 L33.1253285,63 C33.1253285,47.2496529 53,45.5002314 53,28.0004628 C53,12.5291901 41.1408985,0 26.5,0 Z" id="路径"></path>
+        </g>
+    </g>
+</svg>
